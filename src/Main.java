@@ -14,6 +14,19 @@ public class Main {
         int resultado = num1 / num2;
         return resultado;
     }
+
+    //EXTRA !
+    public static void calcularCelsiusParaFahrenheit (double celsius) {
+        double tempF = celsius * 1.8 + 32;
+
+        System.out.println(tempF);
+    }
+
+    //EXTRA 2
+    public static int calcularAreaRetangulo(double retangulo){
+        double area = retangulo * 0.5;
+
+    }
     //exercicio 4
 //    public class boolean ehPar(int numero) {
 //        return numero % 2 == 0;
@@ -27,9 +40,38 @@ public class Main {
     //exercicio 6
     public static void linha() {
         for (int i = 0; i < 30; i++) {
-            System.out.println("-");
+            System.out.print("-");
         }
     }
+
+    //exercicio 7
+    public static boolean ehPalindromo(String palavra) {
+        int inicio = 0;
+        int fim = palavra.length() - 1;
+        while (inicio < fim) {
+            if (palavra.charAt(inicio) == palavra.charAt(fim)) {
+                return false;
+            }
+            inicio++;
+            fim--;
+        }
+        return true;
+    }
+
+    //exercicio 8
+    public static boolean ehPrimo(int numero) {
+        if (numero <= 1) {
+            return false;
+        }
+        for (int i = 2; i < numero; i++) {
+            if (numero % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
     public static void main(String[] args) {
         mostrarMensagem();
         mostrarDobro(5);
@@ -47,5 +89,12 @@ public class Main {
         linha();
         System.out.println("texto no meio das linhas");
         linha();
+
+        System.out.println(ehPalindromo("radar"));
+        System.out.println(ehPalindromo("arara"));
+        System.out.println(ehPalindromo("banana"));
+
+        calcularCelsiusParaFahrenheit(30);
+
     }
 }
